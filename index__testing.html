@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tutorial 1 and 2 - Positions, Backgrounds and On Click Javascript </title>
+        <title>Tutorial 1 - Positions and Backgrounds </title>
         
         <style>
             #myBG   {
@@ -95,6 +95,8 @@
                 top:-12px;
                 padding:5px;
                 cursor:pointer;
+              
+              #mute-video
         </style>
     </head>
     
@@ -102,7 +104,8 @@
         <video id="myBG" autoplay loop>
             <source src="imgs/bg.mp4" />
         </video>
-        
+         
+        <div id="mute"> </div>
         <div id ="controls">
             <div id ="img1" class ="thumbnails"></div>
             <div id ="img2" class="thumbnails"></div>
@@ -160,6 +163,16 @@
             document.getElementById("close").addEventListener("click", function() {
                 document.getElementById("info").style.opacity = 0;
                 });
+                
+            $("video").prop('muted', true);
+
+            $("#mute-video").click( function (){
+                if( $("video").prop('muted') ) {
+            $("video").prop('muted', false);
+            } else {
+            $("video").prop('muted', true);
+    }
+  });              
         </script>
 
     </body>
